@@ -837,95 +837,132 @@
     }
 
     @keyframes floatUp {
-        0% {
-            transform: translateY(0) scale(0.5);
-            opacity: 1;
-        }
+      0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1;
+      }
 
-        100% {
-            transform: translateY(-60px) scale(1.2);
-            opacity: 0;
-       .video-frame {
-    width: 100%;
-    max-width: 750px;
-    margin: 30px auto 0 auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
-    display: block;
-    background: #000;
-}
-        /* Hace que el video se adapte */
-        .video-frame video,
-        video.video-frame {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 20px;
-        }
+      100% {
+        transform: translateY(-60px) scale(1.2);
+        opacity: 0;
+      }
+    }
 
-        /* Responsive para celular */
-        @media (max-width: 768px) {
+    #video-section {
+      background: var(--dark);
+      text-align: center;
+    }
 
-            .video-frame {
-                max-width: 100%;
-                border-radius: 15px;
-            }
+    #video-section .section-title {
+      color: var(--cream);
+    }
 
-            .video-frame video,
-            video.video-frame {
-                border-radius: 15px;
-            }
+    #video-section .section-label {
+      color: var(--rose-light);
+    }
 
-        }
+    .video-frame {
+      max-width: 640px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
+      position: relative;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #1a0a08, #3d2015);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
 
-        /* ← ESTA LLAVE FALTABA */
+    .video-frame:hover {
+      transform: scale(1.02);
+    }
+
+    .video-placeholder-icon {
+      font-size: 4rem;
+    }
+
+    .video-placeholder-text {
+      color: var(--rose-light);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+    .video-play-btn {
+      width: 70px;
+      height: 70px;
+      background: var(--rose);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 0 0 12px rgba(201, 80, 106, 0.2);
+    }
+
+    .video-play-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 16px rgba(201, 80, 106, 0.15);
+    }
+
+    .video-note {
+      color: var(--rose-light);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      font-style: italic;
+    }
 
 
+    #juego {
+      background: linear-gradient(135deg, #fff8f9, var(--cream));
+      text-align: center;
+    }
 
-        #juego {
-            background: linear-gradient(135deg, #fff8f9, var(--cream));
-            text-align: center;
-        }
+    .game-card {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      max-width: 520px;
+      margin: 0 auto;
+      box-shadow: 0 12px 50px rgba(201, 80, 106, 0.12);
+    }
 
-        .game-card {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            max-width: 520px;
-            margin: 0 auto;
-            box-shadow: 0 12px 50px rgba(201, 80, 106, 0.12);
-        }
+    .game-message {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--dark);
+      min-height: 3.5rem;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      transition: all 0.4s ease;
+      line-height: 1.5;
+    }
 
-        .game-message {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--dark);
-            min-height: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            transition: all 0.4s ease;
-            line-height: 1.5;
-        }
+    .game-message.pop {
+      animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
 
-        .game-message.pop {
-            animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
+    @keyframes popIn {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.3;
+      }
 
-        @keyframes popIn {
-
-            0% {
-                transform: scale(0.8);
-                opacity: 0.3;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-        }
-  
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
 
     .game-btn {
       background: linear-gradient(135deg, var(--rose), #e06a7a);
