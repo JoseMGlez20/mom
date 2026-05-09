@@ -837,89 +837,95 @@
     }
 
     @keyframes floatUp {
-      0% {
-        transform: translateY(0) scale(0.5);
-        opacity: 1;
-      }
+        0% {
+            transform: translateY(0) scale(0.5);
+            opacity: 1;
+        }
 
-      100% {
-        transform: translateY(-60px) scale(1.2);
-        opacity: 0;
-      }
-    }
-
-   #video-section {
-    width: 100%;
-    padding: 60px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#video-section .section-inner {
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-}
-
-.video-frame {
+        100% {
+            transform: translateY(-60px) scale(1.2);
+            opacity: 0;
+       .video-frame {
     width: 100%;
     max-width: 750px;
+    margin: 30px auto 0 auto;
     border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
     display: block;
-    margin: 30px auto 0 auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    background: #000;
 }
+        /* Hace que el video se adapte */
+        .video-frame video,
+        video.video-frame {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+        }
 
-/* Celulares */
-@media (max-width: 768px) {
-    .video-frame {
-        max-width: 100%;
-        border-radius: 15px;
-    }
-}
+        /* Responsive para celular */
+        @media (max-width: 768px) {
 
-    #juego {
-      background: linear-gradient(135deg, #fff8f9, var(--cream));
-      text-align: center;
-    }
+            .video-frame {
+                max-width: 100%;
+                border-radius: 15px;
+            }
 
-    .game-card {
-      background: white;
-      border-radius: 20px;
-      padding: 3rem 2rem;
-      max-width: 520px;
-      margin: 0 auto;
-      box-shadow: 0 12px 50px rgba(201, 80, 106, 0.12);
-    }
+            .video-frame video,
+            video.video-frame {
+                border-radius: 15px;
+            }
 
-    .game-message {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: var(--dark);
-      min-height: 3.5rem;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-      transition: all 0.4s ease;
-      line-height: 1.5;
-    }
+        }
 
-    .game-message.pop {
-      animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
+        /* ← ESTA LLAVE FALTABA */
 
-    @keyframes popIn {
-      0% {
-        transform: scale(0.8);
-        opacity: 0.3;
-      }
 
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
+
+        #juego {
+            background: linear-gradient(135deg, #fff8f9, var(--cream));
+            text-align: center;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            max-width: 520px;
+            margin: 0 auto;
+            box-shadow: 0 12px 50px rgba(201, 80, 106, 0.12);
+        }
+
+        .game-message {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--dark);
+            min-height: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            transition: all 0.4s ease;
+            line-height: 1.5;
+        }
+
+        .game-message.pop {
+            animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes popIn {
+
+            0% {
+                transform: scale(0.8);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+        }
+  
 
     .game-btn {
       background: linear-gradient(135deg, var(--rose), #e06a7a);
